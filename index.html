@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vinu Kurian – SAP BTP & S/4HANA Technical Consultant. 6+ years delivering enterprise-grade cloud ERP solutions globally.">
+<title>Vinu Kurian — SAP Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sap-blue:       #0070F3;
+  --sap-blue-dark:  #004B9E;
+  --sap-blue-light: #EBF3FF;
+  --gold:           #C8961A;
+  --gold-light:     #FDF4E0;
+  --ink:            #111827;
+  --ink-2:          #374151;
+  --ink-3:          #6B7280;
+  --ink-4:          #9CA3AF;
+  --rule:           #E5E7EB;
+  --bg:             #FFFFFF;
+  --bg-2:           #F9FAFB;
+  --bg-3:           #F3F4F6;
+  --green:          #059669;
+  --green-light:    #ECFDF5;
+  --radius:         6px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4rem; height: 62px;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.nav-brand-mark {
+  width: 34px; height: 34px; border-radius: 4px;
+  background: var(--sap-blue-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.5px;
+}
+.nav-brand-name {
+  font-size: 14px; font-weight: 600; color: var(--ink);
+  letter-spacing: -0.2px;
+}
+.nav-brand-title {
+  font-size: 11.5px; color: var(--ink-3);
+  font-weight: 400;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 13px; font-weight: 500;
+  color: var(--ink-3); transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--sap-blue); }
+.nav-cta {
+  display: inline-flex; align-items: center;
+  background: var(--sap-blue); color: #fff;
+  padding: 8px 18px; border-radius: var(--radius);
+  font-size: 13px; font-weight: 600;
+  text-decoration: none; transition: background 0.15s;
+}
+.nav-cta:hover { background: var(--sap-blue-dark); }
+
+/* ─── HERO ────────────────────────────────────────────── */
+.hero {
+  max-width: 1160px; margin: 0 auto;
+  padding: 6rem 4rem 5rem;
+  display: grid; grid-template-columns: 1fr 420px;
+  gap: 5rem; align-items: center;
+}
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sap-blue);
+  background: var(--sap-blue-light);
+  padding: 5px 14px; border-radius: 100px;
+  margin-bottom: 1.4rem;
+}
+.kicker-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sap-blue);
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 700; line-height: 1.12;
+  letter-spacing: -1px; color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+.hero h1 em {
+  font-style: italic; color: var(--sap-blue);
+}
+.hero-lead {
+  font-size: 16px; color: var(--ink-2);
+  max-width: 480px; margin-bottom: 2rem;
+  line-height: 1.8; font-weight: 400;
+}
+.hero-chips {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  margin-bottom: 2.5rem;
+}
+.hchip {
+  font-size: 12px; font-weight: 500; color: var(--ink-2);
+  background: var(--bg-3); border: 1px solid var(--rule);
+  padding: 4px 12px; border-radius: 100px;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--sap-blue); color: #fff;
+  padding: 12px 24px; border-radius: var(--radius);
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: background 0.15s; letter-spacing: -0.1px;
+}
+.btn-primary:hover { background: var(--sap-blue-dark); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--bg); color: var(--ink);
+  padding: 12px 24px; border-radius: var(--radius);
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  border: 1.5px solid var(--rule); transition: border-color 0.15s, background 0.15s;
+}
+.btn-secondary:hover { border-color: var(--ink-3); background: var(--bg-2); }
+
+/* hero right card */
+.hero-card {
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 12px; overflow: hidden;
+}
+.hero-card-photo {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top;
+  display: block; border-bottom: 1px solid var(--rule);
+}
+.hero-card-body { padding: 1.4rem 1.6rem; }
+.hc-name {
+  font-size: 17px; font-weight: 700; color: var(--ink);
+  margin-bottom: 2px; letter-spacing: -0.3px;
+}
+.hc-role { font-size: 13px; color: var(--sap-blue); font-weight: 500; margin-bottom: 14px; }
+.hc-stats {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px; background: var(--rule); border-radius: 6px; overflow: hidden;
+  margin-bottom: 1rem;
+}
+.hc-stat {
+  background: var(--bg); padding: 10px 10px 9px; text-align: center;
+}
+.hc-stat-n {
+  font-size: 19px; font-weight: 700; color: var(--ink);
+  display: block; line-height: 1; margin-bottom: 3px;
+}
+.hc-stat-l { font-size: 10.5px; color: var(--ink-4); }
+.hc-links {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.hc-link {
+  font-size: 12px; font-weight: 500; color: var(--ink-3);
+  text-decoration: none; border: 1px solid var(--rule);
+  padding: 5px 12px; border-radius: 4px; background: var(--bg);
+  transition: color 0.15s, border-color 0.15s;
+}
+.hc-link:hover { color: var(--sap-blue); border-color: var(--sap-blue); }
+
+/* ─── LAYOUT UTIL ─────────────────────────────────────── */
+.section { max-width: 1160px; margin: 0 auto; padding: 5rem 4rem; }
+.section + .section { border-top: 1px solid var(--rule); }
+
+.section-header { margin-bottom: 2.8rem; }
+.section-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 6px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700; color: var(--ink);
+  letter-spacing: -0.5px; line-height: 1.2;
+}
+.section-sub {
+  font-size: 14.5px; color: var(--ink-3);
+  max-width: 560px; margin-top: 8px;
+}
+
+/* ─── ABOUT ──────────────────────────────────────────── */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: start;
+}
+.about-text p { color: var(--ink-2); margin-bottom: 1rem; font-size: 15px; }
+.about-text p strong { color: var(--ink); font-weight: 600; }
+.about-social { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.5rem; }
+.soc {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12.5px; font-weight: 500; color: var(--ink-3);
+  text-decoration: none; border: 1px solid var(--rule);
+  padding: 6px 14px; border-radius: 4px; background: var(--bg-2);
+  transition: all 0.15s;
+}
+.soc:hover { color: var(--sap-blue); border-color: var(--sap-blue); background: var(--sap-blue-light); }
+
+.expertise-list { display: flex; flex-direction: column; gap: 10px; }
+.exp-row {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-2); border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+.exp-icon {
+  width: 34px; height: 34px; flex-shrink: 0; border-radius: 6px;
+  background: var(--sap-blue-light); display: flex; align-items: center;
+  justify-content: center;
+}
+.exp-icon svg { width: 17px; height: 17px; stroke: var(--sap-blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.exp-row h4 { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 1px; }
+.exp-row p { font-size: 12.5px; color: var(--ink-3); line-height: 1.5; }
+
+/* ─── EXPERIENCE ─────────────────────────────────────── */
+.timeline { position: relative; }
+.tl-list { display: flex; flex-direction: column; gap: 0; }
+
+.tl-item {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 0 2.5rem; padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.tl-item:first-child { padding-top: 0; }
+.tl-item:last-child { border-bottom: none; }
+
+.tl-left { padding-top: 2px; }
+.tl-period {
+  font-size: 12px; color: var(--ink-4); font-weight: 500; margin-bottom: 4px;
+}
+.tl-company {
+  font-size: 13px; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.2px;
+}
+.tl-badge {
+  display: inline-block; margin-top: 6px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--green); background: var(--green-light);
+  border-radius: 100px; padding: 2px 10px;
+}
+
+.tl-right {}
+.tl-role {
+  font-size: 15.5px; font-weight: 700; color: var(--ink);
+  margin-bottom: 6px; letter-spacing: -0.3px;
+}
+.tl-desc { font-size: 13.5px; color: var(--ink-3); line-height: 1.65; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tl-tag {
+  font-size: 11px; font-weight: 500; color: var(--sap-blue);
+  background: var(--sap-blue-light); border-radius: 100px;
+  padding: 2px 10px;
+}
+
+/* ─── CERTIFICATIONS ─────────────────────────────────── */
+.certs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+.cert-card {
+  border: 1px solid var(--rule); border-radius: 10px;
+  overflow: hidden; background: var(--bg);
+  transition: box-shadow 0.2s;
+}
+.cert-card:hover { box-shadow: 0 6px 30px rgba(0,0,0,0.08); }
+
+.cert-banner {
+  height: 6px;
+  background: linear-gradient(90deg, var(--sap-blue-dark), var(--sap-blue));
+}
+.cert-body { padding: 1.6rem; }
+.cert-issuer-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;
+}
+.cert-logo-box {
+  width: 42px; height: 42px; border-radius: 8px;
+  border: 1px solid var(--rule);
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cert-logo-box span {
+  font-size: 11px; font-weight: 800; color: var(--sap-blue-dark);
+  letter-spacing: 0.5px;
+}
+.cert-issuer-meta {}
+.cert-issuer-name { font-size: 12px; font-weight: 700; color: var(--ink); }
+.cert-type {
+  display: inline-block; font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sap-blue); background: var(--sap-blue-light);
+  padding: 1px 8px; border-radius: 100px; margin-top: 2px;
+}
+
+.cert-title {
+  font-size: 16px; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.3px; line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+.cert-meta-row {
+  display: flex; gap: 1.5rem; margin-bottom: 1.2rem;
+}
+.cert-meta-item label {
+  display: block; font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-4); margin-bottom: 2px;
+}
+.cert-meta-item span { font-size: 13.5px; font-weight: 500; color: var(--ink); }
+
+.cert-footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cert-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--green);
+}
+.status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green);
+}
+.cert-verify {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12.5px; font-weight: 600; color: var(--sap-blue);
+  text-decoration: none; transition: color 0.15s;
+}
+.cert-verify:hover { color: var(--sap-blue-dark); }
+.cert-verify svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* ─── COURSES ─────────────────────────────────────────── */
+.courses-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+.course-card {
+  border: 1px solid var(--rule); border-radius: 10px;
+  padding: 1.5rem; background: var(--bg);
+  display: flex; flex-direction: column; gap: 10px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.course-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.course-level {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+}
+.course-card h3 {
+  font-size: 15px; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.3px; line-height: 1.35;
+}
+.course-card p { font-size: 13px; color: var(--ink-3); line-height: 1.65; flex: 1; }
+.course-foot {
+  border-top: 1px solid var(--rule); padding-top: 12px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.course-price { font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -0.5px; }
+.course-dur { font-size: 12px; color: var(--ink-4); }
+
+/* ─── ACADEMICS ───────────────────────────────────────── */
+.acad-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.acad-card {
+  padding: 1.4rem; border: 1px solid var(--rule);
+  border-radius: 10px; background: var(--bg-2);
+}
+.acad-year {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-4); margin-bottom: 6px;
+}
+.acad-deg {
+  font-size: 14px; font-weight: 700; color: var(--ink);
+  margin-bottom: 4px; line-height: 1.3; letter-spacing: -0.2px;
+}
+.acad-school { font-size: 12.5px; color: var(--ink-3); }
+
+/* ─── BLOGS ───────────────────────────────────────────── */
+.blogs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+.blog-card {
+  text-decoration: none; color: inherit;
+  border: 1px solid var(--rule); border-radius: 10px;
+  padding: 1.4rem; background: var(--bg);
+  display: flex; flex-direction: column; gap: 9px;
+  transition: box-shadow 0.2s;
+}
+.blog-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+.blog-cat {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--sap-blue);
+  background: var(--sap-blue-light); border-radius: 100px;
+  padding: 2px 10px; align-self: flex-start;
+}
+.blog-card h3 {
+  font-size: 14.5px; font-weight: 700; color: var(--ink);
+  line-height: 1.4; letter-spacing: -0.2px;
+}
+.blog-card p { font-size: 13px; color: var(--ink-3); line-height: 1.6; flex: 1; }
+.blog-more {
+  font-size: 12.5px; font-weight: 600; color: var(--sap-blue);
+  display: flex; align-items: center; gap: 4px;
+}
+
+/* ─── CONTACT ─────────────────────────────────────────── */
+.contact-band {
+  background: var(--sap-blue-dark); color: #fff;
+  margin: 0 4rem 5rem; border-radius: 12px;
+  padding: 4rem; max-width: 1160px; margin-left: auto; margin-right: auto;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 3rem; align-items: center;
+}
+.contact-band h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700;
+  color: #fff; margin-bottom: 8px; letter-spacing: -0.5px;
+}
+.contact-band p { color: rgba(255,255,255,0.65); font-size: 15px; }
+.contact-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.c-btn-white {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: #fff; color: var(--sap-blue-dark);
+  padding: 11px 22px; border-radius: var(--radius);
+  font-size: 13.5px; font-weight: 700; text-decoration: none;
+  transition: background 0.15s;
+}
+.c-btn-white:hover { background: #eef5ff; }
+.c-btn-outline {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: transparent; color: #fff;
+  padding: 11px 22px; border-radius: var(--radius);
+  font-size: 13.5px; font-weight: 600; text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  transition: border-color 0.15s, background 0.15s;
+}
+.c-btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.8rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12.5px; color: var(--ink-4);
+}
+footer a { color: var(--ink-4); text-decoration: none; }
+footer a:hover { color: var(--sap-blue); }
+
+/* ─── SCROLL REVEAL ───────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ─── MOBILE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .tl-item { grid-template-columns: 1fr; gap: 4px; }
+  .tl-left { display: flex; gap: 10px; align-items: baseline; }
+  .section { padding: 3.5rem 1.5rem; }
+  .contact-band { grid-template-columns: 1fr; margin: 0 1.5rem 3.5rem; padding: 2.5rem; }
+  footer { padding: 1.5rem; flex-direction: column; gap: 6px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-brand">
+    <div class="nav-brand-mark">VK</div>
+    <div>
+      <div class="nav-brand-name">Vinu Kurian</div>
+      <div class="nav-brand-title">SAP Consultant</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#blogs">Blogs</a></li>
+  </ul>
+  <a href="https://www.linkedin.com/in/vinu-kurian" class="nav-cta" target="_blank">Connect on LinkedIn</a>
+</nav>
+
+<!-- HERO -->
+<div id="home" class="hero reveal">
+  <div>
+    <div class="hero-kicker"><span class="kicker-dot"></span> SAP Certified Associate · BTP & S/4HANA</div>
+    <h1>Turning complex <em>SAP landscapes</em> into scalable solutions.</h1>
+    <p class="hero-lead">6+ years delivering enterprise-grade SAP BTP and S/4HANA implementations across Public Cloud, Private Cloud, and on-premise — from Bangalore to global engagements.</p>
+    <div class="hero-chips">
+      <span class="hchip">SAP BTP</span>
+      <span class="hchip">S/4HANA Public Cloud</span>
+      <span class="hchip">S/4HANA Private Cloud</span>
+      <span class="hchip">ABAP RAP</span>
+      <span class="hchip">Clean Core</span>
+      <span class="hchip">CDS Views</span>
+    </div>
+    <div class="hero-actions">
+      <a href="https://www.linkedin.com/in/vinu-kurian" class="btn-primary" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Connect on LinkedIn
+      </a>
+      <a href="#courses" class="btn-secondary">View Courses ↓</a>
+    </div>
+  </div>
+  <div>
+    <div class="hero-card">
+      <img src="./vkp.jpeg" alt="Vinu Kurian" class="hero-card-photo">
+      <div class="hero-card-body">
+        <div class="hc-name">Vinu Kurian</div>
+        <div class="hc-role">Consultant B2 — Delaware India</div>
+        <div class="hc-stats">
+          <div class="hc-stat">
+            <span class="hc-stat-n">6+</span>
+            <span class="hc-stat-l">Years in SAP</span>
+          </div>
+          <div class="hc-stat">
+            <span class="hc-stat-n">4</span>
+            <span class="hc-stat-l">Companies</span>
+          </div>
+          <div class="hc-stat">
+            <span class="hc-stat-n">12+</span>
+            <span class="hc-stat-l">Blogs</span>
+          </div>
+        </div>
+        <div class="hc-links">
+          <a href="https://www.linkedin.com/in/vinu-kurian" class="hc-link" target="_blank">LinkedIn</a>
+          <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/1155" class="hc-link" target="_blank">SAP Community</a>
+          <a href="https://www.instagram.com/vinu_kurian_/" class="hc-link" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/vinu.kurian.p" class="hc-link" target="_blank">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section reveal">
+  <div class="section-header">
+    <div class="section-eyebrow">About</div>
+    <h2 class="section-title">A decade in the making</h2>
+    <p class="section-sub">From Kerala to global SAP implementations — a career built on precision, continuous learning, and clean enterprise architecture.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a seasoned SAP Consultant with a proven track record delivering enterprise-grade solutions using <strong>SAP BTP</strong> and <strong>SAP S/4HANA</strong> across diverse global industries.</p>
+      <p>My career began at <strong>Innoval Digital Solutions</strong>, where I built a solid foundation in cloud-based enterprise solutions. I progressed through <strong>Utegration LLC → Cognizant → EY GDS</strong>, growing from Consultant to Senior Consultant L2 with a focus on Public and Private Cloud ERP implementations and collaboration with international teams.</p>
+      <p>I currently hold the role of <strong>Consultant B2 at Delaware India</strong>, where I drive digital transformation initiatives and deliver high-impact SAP solutions aligned with evolving business needs.</p>
+      <div class="about-social">
+        <a href="https://www.linkedin.com/in/vinu-kurian" class="soc" target="_blank">LinkedIn</a>
+        <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/1155" class="soc" target="_blank">SAP Community</a>
+        <a href="https://www.instagram.com/vinu_kurian_/" class="soc" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/vinu.kurian.p" class="soc" target="_blank">Facebook</a>
+      </div>
+    </div>
+    <div class="expertise-list">
+      <div class="exp-row">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <h4>SAP BTP & ABAP RAP</h4>
+          <p>RESTful Application Programming, CDS views, behaviour definitions, service bindings on BTP ABAP environment.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <div>
+          <h4>S/4HANA Cloud Implementations</h4>
+          <p>End-to-end Public and Private Cloud ERP implementations with global delivery teams.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Clean Core & Extensibility</h4>
+          <p>Sustainable custom development using side-by-side and in-app extensibility models, keeping core systems upgrade-safe.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <h4>Technical Writing & Training</h4>
+          <p>12+ published articles on the SAP Community platform and paid training courses for aspiring SAP professionals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience" class="section reveal">
+  <div class="section-header">
+    <div class="section-eyebrow">Career</div>
+    <h2 class="section-title">Work experience</h2>
+    <p class="section-sub">Six years across consulting, product engineering, and global ERP implementations at leading firms.</p>
+  </div>
+  <div class="tl-list">
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-period">Feb 2026 – Present</div>
+        <div class="tl-company">Delaware India</div>
+        <span class="tl-badge">Current Role</span>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Consultant B2 — SAP BTP & S/4HANA</div>
+        <div class="tl-desc">Driving digital transformation and delivering high-impact SAP solutions aligned with evolving enterprise business needs.</div>
+        <div class="tl-tags"><span class="tl-tag">SAP BTP</span><span class="tl-tag">S/4HANA</span><span class="tl-tag">Digital Transformation</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-period">Jan 2025 – Feb 2026</div>
+        <div class="tl-company">EY Global Delivery Services</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Senior Consultant L2 — SAP S/4HANA Cloud</div>
+        <div class="tl-desc">Focused on SAP Cloud ERP (Public and Private Cloud) implementations, collaborating with global teams to design scalable, future-ready ERP landscapes.</div>
+        <div class="tl-tags"><span class="tl-tag">Public Cloud</span><span class="tl-tag">Private Cloud</span><span class="tl-tag">EY GDS</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-period">Sep 2023 – Jan 2025</div>
+        <div class="tl-company">Cognizant</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Senior Product Engineer — SAP BTP & S/4HANA</div>
+        <div class="tl-desc">Product-centric delivery model for complex BTP and S/4HANA implementations following Utegration's acquisition by Cognizant.</div>
+        <div class="tl-tags"><span class="tl-tag">SAP BTP</span><span class="tl-tag">Product Engineering</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-period">Jun 2021 – Sep 2023</div>
+        <div class="tl-company">Utegration LLC</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Senior Consultant — SAP BTP & S/4HANA</div>
+        <div class="tl-desc">Progressed from Consultant to Senior Consultant, delivering BTP and S/4HANA solutions for enterprise clients across diverse industries.</div>
+        <div class="tl-tags"><span class="tl-tag">SAP BTP</span><span class="tl-tag">S/4HANA</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-period">Nov 2018 – May 2021</div>
+        <div class="tl-company">Innoval Digital Solutions</div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-role">Associate Consultant — SAP BTP</div>
+        <div class="tl-desc">Built a solid foundation in cloud-based enterprise solutions using SAP Business Technology Platform.</div>
+        <div class="tl-tags"><span class="tl-tag">SAP BTP</span><span class="tl-tag">Cloud ERP</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div id="certs" class="section reveal">
+  <div class="section-header">
+    <div class="section-eyebrow">Credentials</div>
+    <h2 class="section-title">SAP Certifications</h2>
+    <p class="section-sub">SAP Certified Associate credentials — independently verified on Credly.</p>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-banner"></div>
+      <div class="cert-body">
+        <div class="cert-issuer-row">
+          <div class="cert-logo-box"><span>SAP</span></div>
+          <div class="cert-issuer-meta">
+            <div class="cert-issuer-name">SAP SE</div>
+            <span class="cert-type">Certified Associate</span>
+          </div>
+        </div>
+        <div class="cert-title">Managing SAP S/4HANA Cloud Public Edition Projects</div>
+        <div class="cert-meta-row">
+          <div class="cert-meta-item">
+            <label>Issued</label>
+            <span>January 2026</span>
+          </div>
+          <div class="cert-meta-item">
+            <label>Expires</label>
+            <span>January 2027</span>
+          </div>
+        </div>
+        <div class="cert-footer">
+          <span class="cert-status">
+            <span class="status-dot"></span>
+            Active & Verified
+          </span>
+          <a href="https://www.credly.com/badges/f8771b7a-c86e-455c-96cc-341fb31968ad" class="cert-verify" target="_blank">
+            View on Credly
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-3M9 2h5m0 0v5m0-5L7 10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-banner"></div>
+      <div class="cert-body">
+        <div class="cert-issuer-row">
+          <div class="cert-logo-box"><span>SAP</span></div>
+          <div class="cert-issuer-meta">
+            <div class="cert-issuer-name">SAP SE</div>
+            <span class="cert-type">Certified Associate</span>
+          </div>
+        </div>
+        <div class="cert-title">Backend Developer — ABAP Cloud</div>
+        <div class="cert-meta-row">
+          <div class="cert-meta-item">
+            <label>Issued</label>
+            <span>December 2025</span>
+          </div>
+          <div class="cert-meta-item">
+            <label>Credential ID</label>
+            <span style="font-size:11.5px; color: var(--ink-4);">eb287ea3-1593…</span>
+          </div>
+        </div>
+        <div class="cert-footer">
+          <span class="cert-status">
+            <span class="status-dot"></span>
+            Active & Verified
+          </span>
+          <a href="https://www.credly.com/badges/eb287ea3-1593-4ab4-a334-413a13f94bc1/public_url" class="cert-verify" target="_blank">
+            View on Credly
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-3M9 2h5m0 0v5m0-5L7 10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<div id="courses" class="section reveal">
+  <div class="section-header">
+    <div class="section-eyebrow">Training</div>
+    <h2 class="section-title">Courses I offer</h2>
+    <p class="section-sub">Practical SAP training built from real-world project experience — designed for developers and consultants at all levels.</p>
+  </div>
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-level">Intermediate</div>
+      <h3>Fundamentals of SAP BTP (ABAP RAP) Development</h3>
+      <p>Deep dive into RESTful Application Programming on SAP BTP. Covers CDS views, behaviour definitions, service bindings, and BTP deployment.</p>
+      <div class="course-foot">
+        <span class="course-price">$250</span>
+        <span class="course-dur">25 hours</span>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-level">Intermediate</div>
+      <h3>ABAP 7.4/7.5, Clean Core & Extensibility Models</h3>
+      <p>Modernize your ABAP with inline declarations, new SQL capabilities, and SAP's Clean Core strategy for upgrade-safe innovation.</p>
+      <div class="course-foot">
+        <span class="course-price">$180</span>
+        <span class="course-dur">18 hours</span>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-level">All levels</div>
+      <h3>How to Be a Better SAP Developer & Consultant</h3>
+      <p>Cleaner, smarter, more value-driven solutions. Best practices, clean core, testing, and modern SAP tooling for the modern developer.</p>
+      <div class="course-foot">
+        <span class="course-price">$150</span>
+        <span class="course-dur">15 hours</span>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-level">Beginner</div>
+      <h3>Introduction to SAP and the Evolution of SAP</h3>
+      <p>Start your SAP journey — from R/2 and R/3 through to S/4HANA and BTP's cloud-first architecture. Perfect for newcomers.</p>
+      <div class="course-foot">
+        <span class="course-price">$120</span>
+        <span class="course-dur">12 hours</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACADEMICS -->
+<div id="academics" class="section reveal">
+  <div class="section-header">
+    <div class="section-eyebrow">Education</div>
+    <h2 class="section-title">Academic background</h2>
+  </div>
+  <div class="acad-grid">
+    <div class="acad-card">
+      <div class="acad-year">2016 – 2018</div>
+      <div class="acad-deg">Master of Computer Application</div>
+      <div class="acad-school">Nirmala College, Muvattupuzha</div>
+    </div>
+    <div class="acad-card">
+      <div class="acad-year">2013 – 2016</div>
+      <div class="acad-deg">Bachelor of Computer Application</div>
+      <div class="acad-school">Yeldo Mar Baselious College, Kothamangalam</div>
+    </div>
+    <div class="acad-card">
+      <div class="acad-year">2011 – 2013</div>
+      <div class="acad-deg">Higher Secondary — Class 12</div>
+      <div class="acad-school">De Paul EMHSS, Thodupuzha · Kerala HSE</div>
+    </div>
+    <div class="acad-card">
+      <div class="acad-year">2010 – 2011</div>
+      <div class="acad-deg">Secondary — Class 10</div>
+      <div class="acad-school">St. Xavier's Public School, Pothanicadu · CBSE</div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOGS -->
+<div id="blogs" class="section reveal">
+  <div class="section-header">
+    <div class="section-eyebrow">Writing</div>
+    <h2 class="section-title">Technical blogs</h2>
+    <p class="section-sub">Published on the SAP Community platform — practical articles on BTP, ABAP development, and cloud architecture.</p>
+  </div>
+  <div class="blogs-grid">
+    <a href="http://community.sap.com/t5/technology-blogs-by-members/unable-to-read-repository-at-error-connecting-to-url-error-in-eclipse-ide/ba-p/14035704" class="blog-card" target="_blank">
+      <span class="blog-cat">Eclipse / ADT</span>
+      <h3>Unable to Read Repository / Error Connecting to URL in Eclipse IDE</h3>
+      <p>Practical solutions for the most common ADT installation errors encountered in SAP BTP and S/4HANA Cloud environments.</p>
+      <span class="blog-more">Read on SAP Community →</span>
+    </a>
+    <a href="https://community.sap.com/t5/technology-blogs-by-members/abap-benchmark-tool-for-sap-btp-concept/ba-p/13560421" class="blog-card" target="_blank">
+      <span class="blog-cat">Concept</span>
+      <h3>ABAP Benchmark Tool for SAP BTP</h3>
+      <p>A conceptual product ideation for a benchmarking tool to measure and compare ABAP performance on the BTP platform.</p>
+      <span class="blog-more">Read on SAP Community →</span>
+    </a>
+    <a href="https://community.sap.com/t5/technology-blogs-by-members/how-to-be-cloud-ready-sap-btp-abap-model/ba-p/13566488" class="blog-card" target="_blank">
+      <span class="blog-cat">Cloud Readiness</span>
+      <h3>How to Be Cloud Ready — SAP BTP ABAP Model</h3>
+      <p>A clear learning path and mindset shift for ABAP developers making the transition to the BTP cloud model.</p>
+      <span class="blog-more">Read on SAP Community →</span>
+    </a>
+    <a href="https://community.sap.com/t5/technology-blogs-by-members/managed-scenario-the-pseudo-no-code-low-code-approach/ba-p/13521780" class="blog-card" target="_blank">
+      <span class="blog-cat">ABAP RAP</span>
+      <h3>Managed Scenario — The Pseudo No-Code / Low-Code Approach</h3>
+      <p>How the RAP Managed Scenario eliminates CRUD boilerplate so developers can focus on business logic and authorisations.</p>
+      <span class="blog-more">Read on SAP Community →</span>
+    </a>
+    <a href="https://community.sap.com/t5/technology-blogs-by-members/custom-badis-sap-btp/ba-p/13528452" class="blog-card" target="_blank">
+      <span class="blog-cat">BTP</span>
+      <h3>Custom BADIs in SAP BTP</h3>
+      <p>Step-by-step guide to defining and implementing custom Business Add-Ins on the SAP Business Technology Platform.</p>
+      <span class="blog-more">Read on SAP Community →</span>
+    </a>
+    <a href="https://community.sap.com/t5/technology-blogs-by-members/http-services-in-sap-btp/ba-p/13530685" class="blog-card" target="_blank">
+      <span class="blog-cat">BTP</span>
+      <h3>HTTP Services in SAP BTP</h3>
+      <p>Creating and enabling HTTP services in SAP BTP — a significantly simpler approach compared to traditional SAP ERP.</p>
+      <span class="blog-more">Read on SAP Community →</span>
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section reveal" style="padding-top:0;">
+  <div class="contact-band" id="contact">
+    <div>
+      <h2>Open to new opportunities</h2>
+      <p>Consulting engagements, SAP implementations, course inquiries, or just a conversation about the SAP ecosystem — reach out anytime.</p>
+    </div>
+    <div class="contact-btns">
+      <a href="https://www.linkedin.com/in/vinu-kurian" class="c-btn-white" target="_blank">Connect on LinkedIn</a>
+      <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/1155" class="c-btn-outline" target="_blank">SAP Community</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Vinu Kurian · SAP BTP & S/4HANA Consultant · Kerala, India</span>
+  <span>
+    <a href="https://www.linkedin.com/in/vinu-kurian" target="_blank">LinkedIn</a> ·
+    <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/1155" target="_blank">SAP Community</a>
+  </span>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  setTimeout(() => document.querySelector('.hero.reveal')?.classList.add('in'), 120);
+</script>
+</body>
+</html>
